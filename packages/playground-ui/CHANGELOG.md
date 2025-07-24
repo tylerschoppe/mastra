@@ -1,5 +1,19 @@
 # @mastra/playground-ui
 
+## 5.1.16-alpha.0
+
+### Patch Changes
+
+- 89d2f4e: add TTS to the playground
+- Updated dependencies [3f89307]
+- Updated dependencies [9eda7d4]
+- Updated dependencies [9d49408]
+- Updated dependencies [7a7754f]
+- Updated dependencies [fc92d80]
+- Updated dependencies [6bd354c]
+  - @mastra/core@0.11.2-alpha.0
+  - @mastra/client-js@0.10.17-alpha.0
+
 ## 5.1.15
 
 ### Patch Changes

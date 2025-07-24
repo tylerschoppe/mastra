@@ -1,5 +1,17 @@
 # @mastra/client-js
 
+## 0.10.17-alpha.0
+
+### Patch Changes
+
+- 6bd354c: Should not send content type if body instance of FormData
+- Updated dependencies [3f89307]
+- Updated dependencies [9eda7d4]
+- Updated dependencies [9d49408]
+- Updated dependencies [7a7754f]
+- Updated dependencies [fc92d80]
+  - @mastra/core@0.11.2-alpha.0
+
 ## 0.10.16
 
 ### Patch Changes

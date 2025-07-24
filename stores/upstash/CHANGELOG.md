@@ -1,5 +1,18 @@
 # @mastra/upstash
 
+## 0.12.4-alpha.0
+
+### Patch Changes
+
+- 674a348: dependencies updates:
+  - Updated dependency [`@upstash/redis@^1.35.1` ↗︎](https://www.npmjs.com/package/@upstash/redis/v/1.35.1) (from `^1.35.0`, in `dependencies`)
+- Updated dependencies [3f89307]
+- Updated dependencies [9eda7d4]
+- Updated dependencies [9d49408]
+- Updated dependencies [7a7754f]
+- Updated dependencies [fc92d80]
+  - @mastra/core@0.11.2-alpha.0
+
 ## 0.12.3
 
 ### Patch Changes

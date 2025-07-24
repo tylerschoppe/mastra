@@ -1,5 +1,20 @@
 # @mastra/deployer-cloudflare
 
+## 0.11.2-alpha.0
+
+### Patch Changes
+
+- 832691b: dependencies updates:
+  - Updated dependency [`@babel/core@^7.28.0` ↗︎](https://www.npmjs.com/package/@babel/core/v/7.28.0) (from `^7.27.7`, in `dependencies`)
+- Updated dependencies [832691b]
+- Updated dependencies [3f89307]
+- Updated dependencies [9eda7d4]
+- Updated dependencies [9d49408]
+- Updated dependencies [7a7754f]
+- Updated dependencies [fc92d80]
+  - @mastra/deployer@0.11.2-alpha.0
+  - @mastra/core@0.11.2-alpha.0
+
 ## 0.11.1
 
 ### Patch Changes

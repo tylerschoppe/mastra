@@ -1,5 +1,17 @@
 # @mastra/rag
 
+## 1.0.5-alpha.0
+
+### Patch Changes
+
+- b5a6da2: Allow vector query tool to be used without a Mastra server
+- Updated dependencies [3f89307]
+- Updated dependencies [9eda7d4]
+- Updated dependencies [9d49408]
+- Updated dependencies [7a7754f]
+- Updated dependencies [fc92d80]
+  - @mastra/core@0.11.2-alpha.0
+
 ## 1.0.4
 
 ### Patch Changes

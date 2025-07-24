@@ -1,5 +1,12 @@
 # create-mastra
 
+## 0.10.14-alpha.0
+
+### Patch Changes
+
+- d8dec5e: add a cta to invite to deploy to cloud
+- 89d2f4e: add TTS to the playground
+
 ## 0.10.13
 
 ### Patch Changes

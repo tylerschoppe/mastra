@@ -72,5 +72,21 @@
     "@mastra/voice-speechify": "0.10.5",
     "@mastra/inngest": "0.11.6"
   },
-  "changesets": []
+  "changesets": [
+    "@mastra_deployer-5822-dependencies",
+    "@mastra_deployer-cloudflare-5822-dependencies",
+    "@mastra_mem0-5475-dependencies",
+    "@mastra_memory-5737-dependencies",
+    "@mastra_upstash-5737-dependencies",
+    "angry-pigs-notice",
+    "better-yaks-watch",
+    "brave-shrimps-clean",
+    "bumpy-dodos-mate",
+    "eager-deer-play",
+    "easy-bushes-tickle",
+    "every-hairs-call",
+    "flat-melons-attend",
+    "nasty-zebras-jump",
+    "strong-steaks-watch"
+  ]
 }

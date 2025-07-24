@@ -1,5 +1,17 @@
 # @mastra/libsql
 
+## 0.11.3-alpha.0
+
+### Patch Changes
+
+- a3ca14c: `LibSQLVector.doUpsert`: check if transaction is open before attempting rollback
+- Updated dependencies [3f89307]
+- Updated dependencies [9eda7d4]
+- Updated dependencies [9d49408]
+- Updated dependencies [7a7754f]
+- Updated dependencies [fc92d80]
+  - @mastra/core@0.11.2-alpha.0
+
 ## 0.11.2
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @mastra/core
 
+## 0.11.2-alpha.0
+
+### Patch Changes
+
+- 3f89307: improve registerApiRoute validation
+- 9eda7d4: Move createMockModel to test scope. This prevents test dependencies from leaking into production code.
+- 9d49408: Fix conditional branch execution after nested workflow resume. Now conditional branches properly re-evaluate their conditions during resume, ensuring only the correct branches execute.
+- 7a7754f: Fast follow scorers fixing input types, improve llm scorer reliability, fix ui to display scores that are 0
+- fc92d80: fix: GenerateReturn type
+
 ## 0.11.1
 
 ### Patch Changes

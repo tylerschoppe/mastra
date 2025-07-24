@@ -1,5 +1,17 @@
 # @mastra/evals
 
+## 0.10.8-alpha.0
+
+### Patch Changes
+
+- 7a7754f: Fast follow scorers fixing input types, improve llm scorer reliability, fix ui to display scores that are 0
+- Updated dependencies [3f89307]
+- Updated dependencies [9eda7d4]
+- Updated dependencies [9d49408]
+- Updated dependencies [7a7754f]
+- Updated dependencies [fc92d80]
+  - @mastra/core@0.11.2-alpha.0
+
 ## 0.10.7
 
 ### Patch Changes
