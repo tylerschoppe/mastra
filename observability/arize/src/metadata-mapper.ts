@@ -4,7 +4,7 @@ import { SESSION_ID, USER_ID, METADATA } from '@arizeai/openinference-semantic-c
  * Mapping configuration for common metadata keys to OpenInference semantic conventions
  */
 export const METADATA_MAPPINGS = {
-  sessionKeys: ['threadId', 'sessionId'],
+  sessionKeys: ['threadId'],
   userKeys: ['userId', 'userName'],
   metadataKeys: ['companyId', 'companyName', 'correlation_id'],
 } as const;
@@ -15,7 +15,7 @@ type SpanAttributes = Record<string, any>;
  * Applies metadata mappings to span attributes, converting common keys to OpenInference conventions.
  *
  * This function:
- * - Maps threadId/sessionId → session.id
+ * - Maps threadId → session.id
  * - Maps userId/userName → user.id
  * - Collects companyId, companyName, correlation_id into metadata JSON
  * - Preserves all original attributes

@@ -161,6 +161,17 @@ describe('ArizeExporter', () => {
 
     expect(exportedSpans[0].attributes).toMatchInlineSnapshot(`
       {
+        "gen_ai.completion": "{"text":"The weather in Tokyo is sunny."}",
+        "gen_ai.input.messages": "[{"role":"system","parts":[{"type":"text","content":"You are a helpful weather assistant."}]},{"role":"user","parts":[{"type":"text","content":"What is the weather in Tokyo?"}]},{"role":"assistant","parts":[{"type":"text","content":"Let me check the weather for you."},{"type":"tool_call","id":"weatherTool-1","name":"weatherTool","arguments":"{\\"city\\":\\"Tokyo\\"}"}]},{"role":"tool","parts":[{"type":"tool_call_response","id":"weatherTool-1","name":"weatherTool","response":"{\\"city\\":\\"Tokyo\\",\\"temperature\\":70,\\"condition\\":\\"sunny\\"}"}]}]",
+        "gen_ai.operation.name": "chat",
+        "gen_ai.output.messages": "[{"role":"assistant","parts":[{"type":"text","content":"The weather in Tokyo is sunny."}]}]",
+        "gen_ai.prompt": "{"messages":[{"role":"system","content":[{"type":"text","text":"You are a helpful weather assistant."}]},{"role":"user","content":[{"type":"text","text":"What is the weather in Tokyo?"}]},{"role":"assistant","content":[{"type":"text","text":"Let me check the weather for you."},{"type":"tool-call","toolName":"weatherTool","toolCallId":"weatherTool-1","input":{"city":"Tokyo"}}]},{"role":"tool","content":[{"type":"tool-result","toolName":"weatherTool","toolCallId":"weatherTool-1","output":{"value":{"city":"Tokyo","temperature":70,"condition":"sunny"}}}]}]}",
+        "gen_ai.request.model": "gpt-4",
+        "gen_ai.system": "openai",
+        "gen_ai.usage.input_tokens": 10,
+        "gen_ai.usage.output_tokens": 5,
+        "gen_ai.usage.total_tokens": 15,
+        "input": "{"messages":[{"role":"system","content":[{"type":"text","text":"You are a helpful weather assistant."}]},{"role":"user","content":[{"type":"text","text":"What is the weather in Tokyo?"}]},{"role":"assistant","content":[{"type":"text","text":"Let me check the weather for you."},{"type":"tool-call","toolName":"weatherTool","toolCallId":"weatherTool-1","input":{"city":"Tokyo"}}]},{"role":"tool","content":[{"type":"tool-result","toolName":"weatherTool","toolCallId":"weatherTool-1","output":{"value":{"city":"Tokyo","temperature":70,"condition":"sunny"}}}]}]}",
         "input.mime_type": "application/json",
         "input.value": "{"messages":[{"role":"system","content":[{"type":"text","text":"You are a helpful weather assistant."}]},{"role":"user","content":[{"type":"text","text":"What is the weather in Tokyo?"}]},{"role":"assistant","content":[{"type":"text","text":"Let me check the weather for you."},{"type":"tool-call","toolName":"weatherTool","toolCallId":"weatherTool-1","input":{"city":"Tokyo"}}]},{"role":"tool","content":[{"type":"tool-result","toolName":"weatherTool","toolCallId":"weatherTool-1","output":{"value":{"city":"Tokyo","temperature":70,"condition":"sunny"}}}]}]}",
         "llm.input_messages.0.message.contents.0.message_content.text": "You are a helpful weather assistant.",
@@ -187,9 +198,17 @@ describe('ArizeExporter', () => {
         "llm.token_count.completion": 5,
         "llm.token_count.prompt": 10,
         "llm.token_count.total": 15,
+        "mastra.duration_ms": 0,
+        "mastra.end_time": "2025-11-21T17:06:28.364Z",
+        "mastra.span.type": "model_generation",
+        "mastra.span_id": "span-1",
+        "mastra.start_time": "2025-11-21T17:06:28.364Z",
+        "mastra.trace_id": "trace-1",
         "openinference.span.kind": "LLM",
+        "output": "{"text":"The weather in Tokyo is sunny."}",
         "output.mime_type": "application/json",
         "output.value": "{"text":"The weather in Tokyo is sunny."}",
+        "span.kind": "client",
       }
     `);
   });
