@@ -135,6 +135,77 @@ const mastra = new Mastra({
 });
 ```
 
+## Attaching Custom Metadata
+
+Custom span attributes are preserved by default and can be queried in Phoenix/Arize. Common metadata keys are automatically mapped to OpenInference semantic conventions.
+
+### Automatic Metadata Mapping
+
+The exporter automatically maps these common keys:
+
+| Custom Key                                   | OpenInference Convention | Use Case                     |
+| -------------------------------------------- | ------------------------ | ---------------------------- |
+| `threadId`, `sessionId`                      | `session.id`             | Group traces by conversation |
+| `userId`, `userName`                         | `user.id`                | Filter traces by user        |
+| `companyId`, `companyName`, `correlation_id` | `metadata` (JSON)        | Additional context fields    |
+
+### Adding Metadata via Mastra API
+
+```typescript
+// Using tracingOptions.metadata
+const result = await agent.generate('Hello', {
+  tracingOptions: {
+    metadata: {
+      threadId: 'conversation-123',
+      userId: 'user-456',
+      companyId: 'acme-corp',
+    },
+  },
+});
+```
+
+### Adding Metadata via OpenTelemetry API
+
+```typescript
+import { trace } from '@opentelemetry/api';
+
+const span = trace.getActiveSpan();
+if (span) {
+  span.setAttributes({
+    threadId: 'conversation-123',
+    userId: 'user-456',
+    customField: 'value',
+  });
+}
+```
+
+### Querying in Phoenix
+
+Filter traces by session, user, or custom metadata:
+
+```python
+# Filter by session
+df = px.Client().query_spans(filter="session.id == 'conversation-123'")
+
+# Filter by user
+df = px.Client().query_spans(filter="user.id == 'user-456'")
+
+# Filter by custom attributes
+df = px.Client().query_spans(filter="attributes['companyId'] == 'acme-corp'")
+```
+
+### Configuration
+
+Metadata preservation and mapping are enabled by default. To disable:
+
+```typescript
+new ArizeExporter({
+  endpoint: 'http://localhost:6006/v1/traces',
+  preserveCustomAttributes: false, // disable custom attribute preservation
+  autoMapMetadata: false, // disable automatic key mapping
+});
+```
+
 ## OpenInference Semantic Conventions
 
 This exporter follows the [OpenInference Semantic Conventions](https://github.com/Arize-ai/openinference/tree/main/spec) for generative AI applications.
