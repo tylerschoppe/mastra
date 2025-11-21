@@ -34,6 +34,19 @@ export type ArizeExporterConfig = Omit<OtelExporterConfig, 'provider'> & {
    * Optional headers to be added to each OTLP request
    */
   headers?: Record<string, string>;
+  /**
+   * Preserve custom span attributes alongside OpenInference attributes.
+   * When true (default), original attributes like threadId, userId, etc. are retained
+   * for filtering and querying in Phoenix/Arize.
+   * @default true
+   */
+  preserveCustomAttributes?: boolean;
+  /**
+   * Automatically map common metadata keys to OpenInference semantic conventions.
+   * Maps threadId/sessionId -> session.id, userId -> user.id, etc.
+   * @default true
+   */
+  autoMapMetadata?: boolean;
 };
 
 export class ArizeExporter extends OtelExporter {
@@ -62,6 +75,8 @@ export class ArizeExporter extends OtelExporter {
       exporter: new OpenInferenceOTLPTraceExporter({
         url: endpoint,
         headers,
+        preserveCustomAttributes: config.preserveCustomAttributes,
+        autoMapMetadata: config.autoMapMetadata,
       }),
       ...config,
       resourceAttributes: {
